@@ -219,6 +219,7 @@ jobs:
             "$PublishPath/$pluginName.pdb",
             "$PublishPath/$pluginName.dll",
             "$PublishPath/$pluginName.deps.json",
+            "$PublishPath/$pluginName.runtimeconfig.json",
             "$PublishPath/README.md",
             "$PublishPath/manifest.yml",
             "$PublishPath/icon.png"
