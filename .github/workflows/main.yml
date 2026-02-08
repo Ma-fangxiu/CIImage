@@ -57,7 +57,15 @@ jobs:
           }
           
           [xml]$proj = Get-Content $csproj.FullName -Encoding UTF8
-          $version = $proj.Project.PropertyGroup.Version
+          
+          # 查找包含 Version 的 PropertyGroup
+          $version = $null
+          foreach ($pg in $proj.Project.PropertyGroup) {
+            if ($pg.Version) {
+              $version = $pg.Version
+              break
+            }
+          }
           
           if (-not $version) {
             $version = "1.0.0.0"
